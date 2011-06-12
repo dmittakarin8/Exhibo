@@ -1,4 +1,8 @@
 Exhibo::Application.routes.draw do
+  resources :talents do
+    resources :activities
+  end
+
   #get \"users\/show\"
 
   root :to => "home#index"

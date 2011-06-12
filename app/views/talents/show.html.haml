@@ -1,0 +1,51 @@
+%p#notice= notice
+
+%p
+  %b Fname:
+  = @talent.fname
+%p
+  %b Lname:
+  = @talent.lname
+%p
+  %b Email:
+  = @talent.email
+%p
+  %b Summary:
+  = @talent.summary
+%p
+  %b Relocate:
+  = @talent.relocate
+%p
+  %b Travel:
+  = @talent.travel
+%p
+  %b Job type:
+  = @talent.job_type
+%p
+  %b Zip code:
+  = @talent.zip_code
+%p
+  %b Zip distance:
+  = @talent.zip_distance
+%p
+  %b Updated Date:
+  = @talent.updated_dt
+
+= if @talent.activities.size > 0
+  %h2 Activities
+  = for activity in @talent.activities
+    %h3= activity.name
+    %p= activity.created_dt
+
+%h2 Activity
+=form_for [@talent, Activity.new] do |f|
+  %p= f.label :name
+  %p= f.text_field :name
+  %p= f.submit
+
+
+
+
+= link_to 'Edit', edit_talent_path(@talent)
+\|
+= link_to 'Back', talents_path

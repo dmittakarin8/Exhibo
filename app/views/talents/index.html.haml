@@ -1,0 +1,35 @@
+%h1 Listing talents
+
+%table
+  %tr
+    %th Fname
+    %th Lname
+    %th Email
+    %th Summary
+    %th Relocate
+    %th Travel
+    %th Job type
+    %th Zip code
+    %th Zip distance
+    %th
+    %th
+    %th
+
+  - @talents.each do |talent|
+    %tr
+      %td= talent.fname
+      %td= talent.lname
+      %td= talent.email
+      %td= talent.summary
+      %td= talent.relocate
+      %td= talent.travel
+      %td= talent.job_type
+      %td= talent.zip_code
+      %td= talent.zip_distance
+      %td= link_to 'Show', talent
+      %td= link_to 'Edit', edit_talent_path(talent)
+      %td= link_to 'Destroy', talent, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Talent', new_talent_path
