@@ -11,4 +11,6 @@ class Talent
   field :zip_distance
   field :updated_dt, :type => DateTime, default: -> { DateTime.now }
   embeds_many :activities
+  referenced_in :industry
+  PERCENT_TRAVEL = ["None", "25%", "50%", "75%", "100%"]
 end

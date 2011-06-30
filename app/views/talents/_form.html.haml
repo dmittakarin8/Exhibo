@@ -23,7 +23,7 @@
     = f.check_box :relocate
   .field
     = f.label :travel
-    = f.text_field :travel
+    = f.select :travel, Talent::PERCENT_TRAVEL
   .field
     = f.label :job_type
     = f.text_field :job_type
