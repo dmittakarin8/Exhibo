@@ -1,4 +1,6 @@
 Exhibo::Application.routes.draw do
+  resources :industries
+
   resources :talents do
     resources :activities
   end

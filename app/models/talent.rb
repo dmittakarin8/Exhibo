@@ -11,4 +11,5 @@ class Talent
   field :zip_distance
   field :updated_dt, :type => DateTime, default: -> { DateTime.now }
   embeds_many :activities
+  referenced_in :industry
 end
